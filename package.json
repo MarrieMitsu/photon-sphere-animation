@@ -1,0 +1,22 @@
+{
+  "name": "photon-sphere-animation",
+  "version": "0.1.0",
+  "description": "Video animation renderer for PhotonSphere",
+  "private": "true",
+  "scripts": {
+    "build": "node ./scripts/build.cjs",
+    "render": "node ./scripts/render.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarrieMitsu/photon-sphere-animation.git"
+  },
+  "author": "MarrieMitsu <isnainromadoni@gmail.com>",
+  "homepage": "https://github.com/MarrieMitsu/photon-sphere#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "jsdom": "^20.0.0",
+    "photon-sphere": "^2.0.0",
+    "puppeteer": "^16.0.0"
+  }
+}
