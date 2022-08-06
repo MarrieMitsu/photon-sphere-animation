@@ -7,6 +7,8 @@ const NAMESPACE_URI = {
     SVG: 'http://www.w3.org/2000/svg',
 }
 
+const HSL_COLOR_RANGE = [0, 60, 240];
+
 // utils
 function camelToKebabCase(str) {
     return str.replace(/[A-Z]/g, m => "-" + m.toLowerCase());
@@ -14,6 +16,10 @@ function camelToKebabCase(str) {
 
 function kebabToCamelCase(str) {
     return str.replace(/-./g, m => m[1].toUpperCase());
+}
+
+function randNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /**
@@ -77,7 +83,9 @@ function createDOM(element = null, attributes = {}, options = {}) {
 
 module.exports = {
     NAMESPACE_URI,
+    HSL_COLOR_RANGE,
     camelToKebabCase,
     kebabToCamelCase,
+    randNumber,
     createDOM,
 }

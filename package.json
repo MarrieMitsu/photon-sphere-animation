@@ -12,7 +12,7 @@
     "url": "git+https://github.com/MarrieMitsu/photon-sphere-animation.git"
   },
   "author": "MarrieMitsu <isnainromadoni@gmail.com>",
-  "homepage": "https://github.com/MarrieMitsu/photon-sphere#readme",
+  "homepage": "https://github.com/MarrieMitsu/photon-sphere-animation#readme",
   "license": "MIT",
   "devDependencies": {
     "jsdom": "^20.0.0",

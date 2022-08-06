@@ -1,17 +1,10 @@
 // constants
-const SPACE_PALLETE = {
-    NAVY: "rgba(17, 29, 94, 1)",
-    MAROON: "rgba(178, 31, 102, 1)",
-    RED: "rgba(254, 52, 110, 1)",
-    BEIGE: "rgba(255, 189, 105, 1)",
-}
 
 const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z1-plane',
             animation: 'rotate360 7s reverse linear infinite',
-            webkitAnimation: 'rotate360 7s reverse linear infinite',
         },
         radius: 170,
         widths: [18, 15, 12, 9, 6, 9, 12, 15, 18],
@@ -29,7 +22,6 @@ const SphereBluePrint = [
         svgAttributes: {
             class: 'plane z2-plane',
             animation: 'rotate360 6s reverse linear infinite',
-            webkitAnimation: 'rotate360 6s reverse linear infinite',
         },
         radius: 160,
         widths: [17, 14, 11, 8, 5, 8, 11, 14, 17],
@@ -47,7 +39,6 @@ const SphereBluePrint = [
         svgAttributes: {
             class: 'plane z3-plane',
             animation: 'rotate360 5s reverse linear infinite',
-            webkitAnimation: 'rotate360 5s reverse linear infinite',
         },
         radius: 145,
         widths: [16, 13, 10, 7, 4, 7, 10, 13, 16],
@@ -65,7 +56,6 @@ const SphereBluePrint = [
         svgAttributes: {
             class: 'plane z4-plane',
             animation: 'rotate360 3s reverse linear infinite',
-            webkitAnimation: 'rotate360 3s reverse linear infinite',
         },
         radius: 125,
         widths: [15, 12, 9, 6, 3, 6, 9, 12, 15],
@@ -83,7 +73,6 @@ const SphereBluePrint = [
         svgAttributes: {
             class: 'plane z5-plane',
             animation: 'rotate360 2s reverse linear infinite',
-            webkitAnimation: 'rotate360 2s reverse linear infinite',
         },
         radius: 100,
         widths: [14, 11, 8, 5, 2, 5, 8, 11, 14],
@@ -101,7 +90,6 @@ const SphereBluePrint = [
         svgAttributes: {
             class: 'plane z6-plane',
             animation: 'rotate360 1s reverse linear infinite',
-            webkitAnimation: 'rotate360 1s reverse linear infinite',
         },
         radius: 70,
         widths: [13, 10, 7, 4, 1, 4, 7, 10, 13],
@@ -121,7 +109,7 @@ const Z0PlaneBluePrint = [
     {   
         svgAttributes: {
             animation: 'rotate360 1s forwards linear infinite',
-            // webkitAnimation: 'rotate360 1s forwards linear infinite'
+        
         },
         radius: 50,
         widths: [5],
@@ -442,7 +430,6 @@ const Z0PlaneBluePrint = [
 ];
 
 module.exports = {
-    SPACE_PALLETE,
     SphereBluePrint,
     Z0PlaneBluePrint,
 }
