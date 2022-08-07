@@ -81,8 +81,11 @@ html, body {
     height: 2000px;
     /* background-color: red; */
     perspective: 700px;
-    transform: rotate3d(1, 0, 0, 0deg);
-    animation: photon-sphere 25s linear infinite;
+    /* transform: rotate3d(1, 0, 1, 10deg); */
+    /* transform: rotate3d(1, 0, 0, 0deg); */
+    /* animation: photon-sphere 25s linear infinite; */
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg);
 }
 
 .plane {
@@ -90,38 +93,52 @@ html, body {
 }
 
 .z0-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 0px) scale(1);
-    animation: scale-z0-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(0px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) translate3d(0px, 0px, 0px) scale(1); */
+    /* animation: scale-z0-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 .z1-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 20px) scale(1);
-    animation: scale-z1-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(20px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 20px) scale(1); */
+    /* animation: scale-z1-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 .z2-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 40px) scale(1);
-    animation: scale-z2-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(40px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 40px) scale(1); */
+    /* animation: scale-z2-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 .z3-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 60px) scale(1);
-    animation: scale-z3-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(60px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 60px) scale(1); */
+    /* animation: scale-z3-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 .z4-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 80px) scale(1);
-    animation: scale-z4-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(80px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 80px) scale(1); */
+    /* animation: scale-z4-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 .z5-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 100px) scale(1);
-    animation: scale-z5-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(100px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 100px) scale(1); */
+    /* animation: scale-z5-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 .z6-plane {
-    transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 120px) scale(1);
-    animation: scale-z6-plane 5s cubic-bezier(.9, 0, .050, 1.5);
+    transform-origin: 50% 50% 0px;
+    transform: rotateX(58deg) rotateY(15deg) rotateZ(0deg) translateZ(120px) scale(0);
+    /* transform: rotate3d(5, 1, 1, 60deg) rotateZ(0deg) translate3d(0px, 0px, 120px) scale(1); */
+    /* animation: scale-z6-plane 5s cubic-bezier(.9, 0, .050, 1.5); */
 }
 
 

@@ -78,15 +78,21 @@ function generateBgStarsPoint() {
         console.error(error);
     }
 }
-generateBgStarsPoint();
+// generateBgStarsPoint();
 
 // generatePhotonSphere
 function generatePhotonSphere() {
     try {
-        const svgs = [];
+        const svgs = []; // array of DOM object
+        const orbitIds = []; // array of { [string]:  }
 
         // Z0Plane
         for (let i = 0; i < Z0PlaneBluePrint.length; i++) {
+            const ids = {
+                id: `z0-plane-${i + 1}`,
+                animation: Z0PlaneBluePrint[i].svgAttributes.animation,
+            };
+
             const orbit = PhotonSphere({
                 radius: Z0PlaneBluePrint[i].radius,
                 widths: Z0PlaneBluePrint[i].widths,
@@ -105,15 +111,16 @@ function generatePhotonSphere() {
 
             const svgEl = createDOM('svg', {
                 attributes: {
+                    id: ids.id,
                     // class: 'plane z0-plane',
                     width: Z0PlaneBluePrint[i].radius * 2,
                     height: Z0PlaneBluePrint[i].radius * 2,
                     overflow: 'visible',
                     xmlns: NAMESPACE_URI.SVG,
                 },
-                styles: {
-                    animation: Z0PlaneBluePrint[i].svgAttributes.animation,
-                }
+                // styles: {
+                //     animation: Z0PlaneBluePrint[i].svgAttributes.animation,
+                // }
             }, {
                 namespaceURI: NAMESPACE_URI.SVG,
             });
@@ -143,10 +150,16 @@ function generatePhotonSphere() {
 
             wrapperEl.appendChild(svgEl);
             svgs.push(wrapperEl);
+            orbitIds.push(ids);
         }
 
         // Sphere
         for (let i = 0; i < SphereBluePrint.length; i++) {
+            const ids = {
+                id: `z${i + 1}-plane-1`,
+                animation: SphereBluePrint[i].svgAttributes.animation,
+            };
+
             const orbit = PhotonSphere({
                 radius: SphereBluePrint[i].radius,
                 widths: SphereBluePrint[i].widths,
@@ -167,15 +180,16 @@ function generatePhotonSphere() {
 
             const svgEl = createDOM('svg', {
                 attributes: {
+                    id: ids.id,
                     // class: SphereBluePrint[i].svgAttributes.class,
                     width: SphereBluePrint[i].radius * 2,
                     height: SphereBluePrint[i].radius * 2,
                     overflow: 'visible',
                     xmlns: NAMESPACE_URI.SVG,
                 },
-                styles: {
-                    animation: SphereBluePrint[i].svgAttributes.animation,
-                }
+                // styles: {
+                //     animation: SphereBluePrint[i].svgAttributes.animation,
+                // }
             }, {
                 namespaceURI: NAMESPACE_URI.SVG,
             });
@@ -201,9 +215,13 @@ function generatePhotonSphere() {
 
             wrapperEl.appendChild(svgEl);
             svgs.push(wrapperEl);
+            orbitIds.push(ids);
         }
 
         // Generate
+        const jsonPath = path.join(__dirname, '..', 'orbit-ids.json');
+        fs.writeFileSync(jsonPath, JSON.stringify(orbitIds));
+
         const htmlPath = path.join(__dirname, '..', 'index.html');
         JSDOM.fromFile(htmlPath)
             .then(dom => {

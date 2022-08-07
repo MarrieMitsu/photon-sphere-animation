@@ -4,7 +4,11 @@ const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z1-plane',
-            animation: 'rotate360 7s reverse linear infinite',
+            animation: {
+                duration: 7000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 170,
         widths: [18, 15, 12, 9, 6, 9, 12, 15, 18],
@@ -21,7 +25,11 @@ const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z2-plane',
-            animation: 'rotate360 6s reverse linear infinite',
+            animation: {
+                duration: 6000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 160,
         widths: [17, 14, 11, 8, 5, 8, 11, 14, 17],
@@ -38,7 +46,11 @@ const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z3-plane',
-            animation: 'rotate360 5s reverse linear infinite',
+            animation: {
+                duration: 5000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 145,
         widths: [16, 13, 10, 7, 4, 7, 10, 13, 16],
@@ -55,7 +67,11 @@ const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z4-plane',
-            animation: 'rotate360 3s reverse linear infinite',
+            animation: {
+                duration: 3000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 125,
         widths: [15, 12, 9, 6, 3, 6, 9, 12, 15],
@@ -72,7 +88,11 @@ const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z5-plane',
-            animation: 'rotate360 2s reverse linear infinite',
+            animation: {
+                duration: 2000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 100,
         widths: [14, 11, 8, 5, 2, 5, 8, 11, 14],
@@ -89,7 +109,11 @@ const SphereBluePrint = [
     {
         svgAttributes: {
             class: 'plane z6-plane',
-            animation: 'rotate360 1s reverse linear infinite',
+            animation: {
+                duration: 1000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 70,
         widths: [13, 10, 7, 4, 1, 4, 7, 10, 13],
@@ -108,8 +132,11 @@ const SphereBluePrint = [
 const Z0PlaneBluePrint = [
     {   
         svgAttributes: {
-            animation: 'rotate360 1s forwards linear infinite',
-        
+            animation: {
+                duration: 1000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 50,
         widths: [5],
@@ -125,7 +152,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 10s forwards linear infinite'
+            animation: {
+                duration: 10000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 60,
         widths: [5],
@@ -141,7 +172,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 5s reverse linear infinite'
+            animation: {
+                duration: 5000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 80,
         widths: [3],
@@ -157,7 +192,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 8s forwards linear infinite'
+            animation: {
+                duration: 8000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 100,
         widths: [10],
@@ -173,7 +212,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 8s reverse linear infinite'
+            animation: {
+                duration: 8000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 180,
         widths: [18, 15, 12, 9, 6, 9, 12, 15, 18],
@@ -189,7 +232,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 12s forwards linear infinite'
+            animation: {
+                duration: 12000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 200,
         widths: [18, 15, 12, 9, 6, 9, 12, 15, 18],
@@ -205,7 +252,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 6s forwards linear infinite'
+            animation: {
+                duration: 6000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 250,
         widths: [20, 15, 10],
@@ -221,7 +272,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 18s reverse linear infinite'
+            animation: {
+                duration: 18000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 300,
         widths: [5],
@@ -237,7 +292,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 13s reverse linear infinite'
+            animation: {
+                duration: 13000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 320,
         widths: [9],
@@ -253,7 +312,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 4s reverse linear infinite'
+            animation: {
+                duration: 4000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 330,
         widths: [1],
@@ -269,7 +332,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 2s forwards linear infinite'
+            animation: {
+                duration: 2000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 340,
         widths: [1],
@@ -285,7 +352,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 8s reverse linear infinite'
+            animation: {
+                duration: 8000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 380,
         widths: [2],
@@ -301,7 +372,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 20s forwards linear infinite'
+            animation: {
+                duration: 20000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 420,
         widths: [20],
@@ -317,7 +392,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 24s forwards linear infinite'
+            animation: {
+                duration: 24000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 440,
         widths: [5],
@@ -333,7 +412,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 30s forwards linear infinite'
+            animation: {
+                duration: 30000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 480,
         widths: [30],
@@ -349,7 +432,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 2s forwards linear infinite'
+            animation: {
+                duration: 2000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 500,
         widths: [3],
@@ -365,7 +452,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 30s reverse linear infinite'
+            animation: {
+                duration: 30000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 540,
         widths: [30],
@@ -381,7 +472,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 60s reverse linear infinite'
+            animation: {
+                duration: 60000,
+                direction: 'reverse',
+                reverse: true,
+            },
         },
         radius: 550,
         widths: [5],
@@ -397,7 +492,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 20s forwards linear infinite'
+            animation: {
+                duration: 20000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 600,
         widths: [20],
@@ -413,7 +512,11 @@ const Z0PlaneBluePrint = [
     },
     {
         svgAttributes: {
-            animation: 'rotate360 200s forwards linear infinite'
+            animation: {
+                duration: 200000,
+                direction: 'normal',
+                reverse: false,
+            },
         },
         radius: 650,
         widths: [3],
