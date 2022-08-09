@@ -5,6 +5,10 @@ const { JSDOM } = require('jsdom');
 const path = require('path');
 const fs = require('fs');
 
+const SCREEN_WIDTH = 1920;
+const SCREEN_HEIGHT = 1080;
+
+// glowEffectFilter
 function glowEffectFilter(id, glowRange) {
     const filterEl = createDOM('filter', {
         attributes: {
@@ -56,8 +60,7 @@ function glowEffectFilter(id, glowRange) {
 // generateBgStarsPoint
 function generateBgStarsPoint() {
     try {
-        const SCREEN_SIZE = 1440;
-        const diameter = (SCREEN_SIZE * Math.sqrt(2)) * Math.sqrt(2);
+        const diameter = (SCREEN_WIDTH * Math.sqrt(2)) * Math.sqrt(2);
 
         const data = [];
         for (let i = 0; i < diameter; i++) {
@@ -72,13 +75,45 @@ function generateBgStarsPoint() {
         }
 
         // generate
-        const jsonPath = path.join(__dirname, '..', 'bg-stars.json');
+        const jsonPath = path.join(__dirname, '../static', 'bg-stars.json');
         fs.writeFileSync(jsonPath, JSON.stringify(data));
     } catch (error) {
         console.error(error);
     }
 }
 // generateBgStarsPoint();
+
+function generateFrontStarsPoint() {
+    try {
+        const VARIATION = 5;
+        const STARS_COUNT = 200;
+        
+        const variationData = [];
+        for (let i = 0; i < VARIATION; i++) {
+            const data = [];
+
+            for (let j = 0; j < STARS_COUNT; j++) {
+                const x = randNumber(-(SCREEN_WIDTH / 2), SCREEN_WIDTH / 2);
+                const y = randNumber(-(SCREEN_HEIGHT / 2), SCREEN_HEIGHT / 2);
+                const z = randNumber(1, 6);
+                const hue = HSL_COLOR_RANGE[randNumber(0, HSL_COLOR_RANGE.length - 1)];
+                const sat = randNumber(50, 100);
+
+                data.push({ x, y, z, hue, sat });
+            }
+            
+            variationData.push(data);
+        }
+
+        // generate
+        const jsonPath = path.join(__dirname, '../static', 'front-stars.json');
+        fs.writeFileSync(jsonPath, JSON.stringify(variationData));
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+// generateFrontStarsPoint();
 
 // generatePhotonSphere
 function generatePhotonSphere() {
@@ -112,20 +147,16 @@ function generatePhotonSphere() {
             const svgEl = createDOM('svg', {
                 attributes: {
                     id: ids.id,
-                    // class: 'plane z0-plane',
                     width: Z0PlaneBluePrint[i].radius * 2,
                     height: Z0PlaneBluePrint[i].radius * 2,
                     overflow: 'visible',
                     xmlns: NAMESPACE_URI.SVG,
                 },
-                // styles: {
-                //     animation: Z0PlaneBluePrint[i].svgAttributes.animation,
-                // }
             }, {
                 namespaceURI: NAMESPACE_URI.SVG,
             });
 
-            // const filterEl = glowEffectFilter(`glow-${i}`, 100);
+            // const filterEl = glowEffectFilter(`glow-${i}`, 60);
 
             for (let j = 0; j < orbit.length; j++) {
                 const pathEl = createDOM('path', {
@@ -181,15 +212,11 @@ function generatePhotonSphere() {
             const svgEl = createDOM('svg', {
                 attributes: {
                     id: ids.id,
-                    // class: SphereBluePrint[i].svgAttributes.class,
                     width: SphereBluePrint[i].radius * 2,
                     height: SphereBluePrint[i].radius * 2,
                     overflow: 'visible',
                     xmlns: NAMESPACE_URI.SVG,
                 },
-                // styles: {
-                //     animation: SphereBluePrint[i].svgAttributes.animation,
-                // }
             }, {
                 namespaceURI: NAMESPACE_URI.SVG,
             });
@@ -219,7 +246,7 @@ function generatePhotonSphere() {
         }
 
         // Generate
-        const jsonPath = path.join(__dirname, '..', 'orbit-ids.json');
+        const jsonPath = path.join(__dirname, '../static', 'orbit-ids.json');
         fs.writeFileSync(jsonPath, JSON.stringify(orbitIds));
 
         const htmlPath = path.join(__dirname, '..', 'index.html');

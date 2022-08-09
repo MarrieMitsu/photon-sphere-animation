@@ -2,7 +2,11 @@ const path = require('path');
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
-const ANIMATION_DURATION = 20; // in seconds
+const VIEWPORT_WIDTH = 1920;
+const VIEWPORT_HEIGHT = 1080;
+
+const RESOLUTION = `${VIEWPORT_WIDTH}x${VIEWPORT_HEIGHT}`;
+const ANIMATION_DURATION = 12; // in seconds
 const FPS = 60;
 const DPF = 1000 / FPS;
 const FRAMES = FPS * ANIMATION_DURATION;
@@ -13,10 +17,16 @@ const FRAMES = FPS * ANIMATION_DURATION;
         args: ['--use-gl=egl']
     });
     const page = await browser.newPage();
-    await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
-    await page.goto('file:///D:/.tmp-workspaces/photon-sphere-animation/index.html', { waitUntil: 'domcontentloaded' });
+    await page.setViewport({
+        width: VIEWPORT_WIDTH, 
+        height: VIEWPORT_HEIGHT, 
+        deviceScaleFactor: 1 
+    });
+    await page.goto(path.join(__dirname, '../index.html'), { 
+        waitUntil: 'domcontentloaded',
+    });
     
-    console.log(`ANIMATION_DURATION: ${ANIMATION_DURATION}s\nFPS: ${FPS}\nDPF: ${DPF}ms\nTOTAL_FRAME: ${FRAMES}\n`);
+    console.log(`RESOLUTION: ${RESOLUTION}\nANIMATION_DURATION: ${ANIMATION_DURATION}s\nFPS: ${FPS}\nDPF: ${DPF}ms\nTOTAL_FRAME: ${FRAMES}\n`);
 
     const temporaryPath = path.join(__dirname, '../tmp');
     if (!fs.existsSync(temporaryPath)) {
@@ -40,6 +50,8 @@ const FRAMES = FPS * ANIMATION_DURATION;
     }
 
     const a1 = performance.now();
+
+    console.log(`\nRESOLUTION: ${RESOLUTION}\nANIMATION_DURATION: ${ANIMATION_DURATION}s\nFPS: ${FPS}\nDPF: ${DPF}ms\nTOTAL_FRAME: ${FRAMES}\n`);
     console.log(`Finish!, render took ${a1 - a0} ms.`);
 
     await browser.close();
