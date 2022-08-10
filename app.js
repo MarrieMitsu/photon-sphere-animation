@@ -83,7 +83,9 @@ class PhotonSphereScene {
     constructor() {
         this.#initPhotonSphere();
         this.#initPlane();
-        this.#initOrbit();
+        if (!AUTOPLAY) {
+            this.#initOrbit();
+        }
     }
 
     get photonSphereController() {
@@ -102,12 +104,27 @@ class PhotonSphereScene {
         this.#photonSphere = document.getElementById('photon-sphere');
         this.#photonSphereController = anime({
             targets: this.#photonSphere,
-            duration: 25000,
+            // duration: 5000,
             loop: true,
-            rotateX: 10,
-            rotateY: 0,
-            rotateZ: 10,
-            direction: 'alternate',
+            // rotateX: 10,
+            // rotateY: 0,
+            // rotateZ: 10,
+            // direction: 'alternate',
+            keyframes: [
+                {
+                    rotateX: 10,
+                    rotateY: 0,
+                    rotateZ: 10,
+                    duration: 25000,
+                },
+                {
+                    rotateX: 10,
+                    rotateY: 0,
+                    rotateZ: 0,
+                    duration: 25000,
+                    // endDelay: 1000,
+                },
+            ],
             autoplay: AUTOPLAY,
             easing: 'linear',
         });
@@ -296,8 +313,10 @@ function jumpToFrame(timestamp) {
 
 }
 
-let CURRENT_TIMESTAMP = 0;
-window.addEventListener('click', function() {
-    CURRENT_TIMESTAMP += 1000 / 24;
-    jumpToFrame(CURRENT_TIMESTAMP);
-});
+if (!AUTOPLAY) {
+    let CURRENT_TIMESTAMP = 0;
+    window.addEventListener('click', function() {
+        CURRENT_TIMESTAMP += 1000 / 24;
+        jumpToFrame(CURRENT_TIMESTAMP);
+    });
+}

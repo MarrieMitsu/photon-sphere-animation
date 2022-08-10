@@ -6,7 +6,7 @@ const VIEWPORT_WIDTH = 1920;
 const VIEWPORT_HEIGHT = 1080;
 
 const RESOLUTION = `${VIEWPORT_WIDTH}x${VIEWPORT_HEIGHT}`;
-const ANIMATION_DURATION = 12; // in seconds
+const ANIMATION_DURATION = 30; // in seconds
 const FPS = 60;
 const DPF = 1000 / FPS;
 const FRAMES = FPS * ANIMATION_DURATION;

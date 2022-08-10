@@ -156,7 +156,7 @@ function generatePhotonSphere() {
                 namespaceURI: NAMESPACE_URI.SVG,
             });
 
-            // const filterEl = glowEffectFilter(`glow-${i}`, 60);
+            const filterEl = glowEffectFilter(`glow-${i}`, 60);
 
             for (let j = 0; j < orbit.length; j++) {
                 const pathEl = createDOM('path', {
@@ -169,13 +169,13 @@ function generatePhotonSphere() {
                         'shape-rendering': "geometricPrecision",
                         'stroke-linejoin': "round",
                         'vector-effect': "non-scaling-stroke",
-                        // filter: `url(#glow-${i})`,
+                        filter: `url(#glow-${i})`,
                     }
                 }, {
                     namespaceURI: NAMESPACE_URI.SVG,
                 });
 
-                // svgEl.appendChild(filterEl);
+                svgEl.appendChild(filterEl);
                 svgEl.appendChild(pathEl);
             }
 
@@ -268,4 +268,4 @@ function generatePhotonSphere() {
         console.error(error);
     }
 }
-generatePhotonSphere();
+// generatePhotonSphere();
